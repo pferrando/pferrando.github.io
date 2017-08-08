@@ -330,7 +330,7 @@ body.loaded #preloader{
 .home-section-background {
     position: relative;
     height: 100%;
-    background: url(pferrando.github.io/images/bg/bg.JPG);
+    background: url(../images/bg/bg.JPG);
     background-size: cover;
     z-index: 1;
 }
@@ -673,7 +673,7 @@ ul.portfolio li.active {
 
 .statistics-section {
 	position: relative;
-    background: url(pferrando.github.io/images/bg/statistics.JPG);
+    background: url(../images/bg/statistics.JPG);
     background-size: cover;
     z-index: 1;
 }
