@@ -14,9 +14,9 @@ function i(a){
 		ga('ec:addProduct', {
 	   	'id': document.location.pathname,
 	   	'name': document.location.pathname,
-	   	'category': labels + '/' + document.location.pathname.match(/^\/([0-9]{4})\/[0-9]{2}\/.*/)[1] + '/' + document.location.pathname.match(/^\/[0-9]{4}\/([0-9]{2})\/.*/)[1],
-	   	'brand': 'Google',
-	   	'variant': 'black',
+	   	'category': labels,
+	   	//'brand': 'brand',
+	   	//'variant': 'variant',
 	   	'price': '1',
 	   	'quantity': 1
 		});
@@ -26,11 +26,11 @@ function i(a){
 		if(a=="100%"){
 			ga('ec:setAction', 'purchase', {
 				'id': document.location.pathname,
-				'affiliation': 'Google Store - Online',
+				//'affiliation': 'affiliation',
 				'revenue': '1',
 				'tax': '0',
 				'shipping': '0',
-				'coupon': 'SUMMER2013' 
+				//'coupon': 'coupon' 
 			});}
 		}
 	var d=b.GoogleAnalyticsObject;void 0===b[c.dataLayerName]||c.forceSyntax?"function"==typeof b[d]&&"function"==typeof b[d].getAll&&2!==c.forceSyntax?b[d]("send","event",c.category,a,c.label):void 0!==b._gaq&&1!==c.forceSyntax&&b._gaq.push(["_trackEvent",c.category,a,c.label,0,!0]):b[c.dataLayerName].push({event:"scrollTracking",attributes:{distance:a,label:c.label}})
