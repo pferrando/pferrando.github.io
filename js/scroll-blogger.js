@@ -4,7 +4,7 @@ function e(a,b){var d,e,h,i=s()||{},j=[],k=[];if(c.distances.percentages&&(c.dis
 function f(a,b,c,d,e){var f;for(f=0;f<b.length;f++){var g=parseInt(b[f],10),h="%"!==c?g+e:d*(g/100)+e,i=g+c;h<=d+e&&(a[i]=h)}return a}
 function g(a,b){var c,d=parseInt(a,10),e=b/d,f=[];for(c=1;c<e+1;c++)f.push(c*d);return f}
 function h(){var a,b,d=j(c.bottom),f=j(c.top),g=m(d,f),h=e(g,f||0),l=k();for(b in h)a=h[b],l>a&&!r[b]&&a<(d||1/0)&&a>(f||0)&&(r[b]=!0,i(b))}
-function i(a){var d=b.GoogleAnalyticsObject;void 0===b[c.dataLayerName]||c.forceSyntax?"function"==typeof b[d]&&"function"==typeof b[d].getAll&&2!==c.forceSyntax?b[d]("blogger.send","event",c.category,a,c.label):void 0!==b._gaq&&1!==c.forceSyntax&&b._gaq.push(["_trackEvent",c.category,a,c.label,0,!0]):b[c.dataLayerName].push({event:"scrollTracking",attributes:{distance:a,label:c.label}})}
+function i(a){var d=b.GoogleAnalyticsObject;void 0===b[c.dataLayerName]||c.forceSyntax?"function"==typeof b[d]&&"function"==typeof b[d].getAll&&2!==c.forceSyntax?b[d]("send","event",c.category,a,c.label):void 0!==b._gaq&&1!==c.forceSyntax&&b._gaq.push(["_trackEvent",c.category,a,c.label,0,!0]):b[c.dataLayerName].push({event:"scrollTracking",attributes:{distance:a,label:c.label}})}
 function j(b){if("number"==typeof b||parseInt(b,10))return parseInt(b,10);try{return p(1===b.nodeType?b:a.querySelector(b))}catch(c){return}}
 function k(){var c=void 0!==b.pageXOffset,d="CSS1Compat"===(a.compatMode||""),e=c?b.pageYOffset:d?a.documentElement.scrollTop:a.body.scrollTop;return parseInt(e,10)+parseInt(l(),10)}
 function l(){return("CSS1Compat"===a.compatMode?a.documentElement:a.body).clientHeight}
