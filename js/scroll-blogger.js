@@ -16,9 +16,9 @@ function i(a){
 	   	'price': '1',
 	   	'quantity': 1
 		});
-		if(a=="25%"){ga('ec:setAction', 'detail');}
-		if(a=="50%"){ga('ec:setAction', 'add');}
-		if(a=="75%"){ga('ec:setAction','checkout', {'step': 1});}
+		if(a=="25%"){ga('ec:setAction', 'add');}
+		if(a=="50%"){ga('ec:setAction','checkout', {'step': 1});}
+		if(a=="75%"){ga('ec:setAction','checkout', {'step': 2});}
 		if(a=="100%"){
 			ga('ec:setAction', 'purchase', {
 				'id': document.location.pathname,
