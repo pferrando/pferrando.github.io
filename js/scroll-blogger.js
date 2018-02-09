@@ -6,28 +6,29 @@ function g(a,b){var c,d=parseInt(a,10),e=b/d,f=[];for(c=1;c<e+1;c++)f.push(c*d);
 function h(){var a,b,d=j(c.bottom),f=j(c.top),g=m(d,f),h=e(g,f||0),l=k();for(b in h)a=h[b],l>a&&!r[b]&&a<(d||1/0)&&a>(f||0)&&(r[b]=!0,i(b))}
 //function i(a){var d=b.GoogleAnalyticsObject;void 0===b[c.dataLayerName]||c.forceSyntax?"function"==typeof b[d]&&"function"==typeof b[d].getAll&&2!==c.forceSyntax?b[d]("send","event",c.category,a,c.label):void 0!==b._gaq&&1!==c.forceSyntax&&b._gaq.push(["_trackEvent",c.category,a,c.label,0,!0]):b[c.dataLayerName].push({event:"scrollTracking",attributes:{distance:a,label:c.label}})}
 function i(a){
-	ga('ec:addProduct', {
-	   'id': document.location.pathname,
-	   'name': document.location.pathname,
-	   'category': 'Apparel',
-	   'brand': 'Google',
-	   'variant': 'black',
-	   'price': '29.20',
-	   'quantity': 1
-	});
-	if(a=="25%"){ga('ec:setAction', 'detail');}
-	if(a=="50%"){ga('ec:setAction', 'add');}
-	if(a=="75%"){ga('ec:setAction','checkout', {'step': 1});}
-	if(a=="100%"){
-		// Purchase
-		ga('ec:setAction', 'purchase', {
-			'id': 'T12345',
-			'affiliation': 'Google Store - Online',
-			'revenue': '37.39',
-			'tax': '2.85',
-			'shipping': '5.34',
-			'coupon': 'SUMMER2013'    // User added a coupon at checkout.
-	});}
+	if(/^\/[0-9]{4}\/[0-9]{2}\//.test(document.location.pathname)){
+		ga('ec:addProduct', {
+	   	'id': document.location.pathname,
+	   	'name': document.location.pathname,
+	   	'category': 'Apparel',
+	   	'brand': 'Google',
+	   	'variant': 'black',
+	   	'price': '1',
+	   	'quantity': 1
+		});
+		if(a=="25%"){ga('ec:setAction', 'detail');}
+		if(a=="50%"){ga('ec:setAction', 'add');}
+		if(a=="75%"){ga('ec:setAction','checkout', {'step': 1});}
+		if(a=="100%"){
+			ga('ec:setAction', 'purchase', {
+				'id': document.location.pathname,
+				'affiliation': 'Google Store - Online',
+				'revenue': '1',
+				'tax': '0',
+				'shipping': '0',
+				'coupon': 'SUMMER2013' 
+			});}
+		}
 	var d=b.GoogleAnalyticsObject;void 0===b[c.dataLayerName]||c.forceSyntax?"function"==typeof b[d]&&"function"==typeof b[d].getAll&&2!==c.forceSyntax?b[d]("send","event",c.category,a,c.label):void 0!==b._gaq&&1!==c.forceSyntax&&b._gaq.push(["_trackEvent",c.category,a,c.label,0,!0]):b[c.dataLayerName].push({event:"scrollTracking",attributes:{distance:a,label:c.label}})
 	}
 function j(b){if("number"==typeof b||parseInt(b,10))return parseInt(b,10);try{return p(1===b.nodeType?b:a.querySelector(b))}catch(c){return}}
