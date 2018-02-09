@@ -7,10 +7,14 @@ function h(){var a,b,d=j(c.bottom),f=j(c.top),g=m(d,f),h=e(g,f||0),l=k();for(b i
 //function i(a){var d=b.GoogleAnalyticsObject;void 0===b[c.dataLayerName]||c.forceSyntax?"function"==typeof b[d]&&"function"==typeof b[d].getAll&&2!==c.forceSyntax?b[d]("send","event",c.category,a,c.label):void 0!==b._gaq&&1!==c.forceSyntax&&b._gaq.push(["_trackEvent",c.category,a,c.label,0,!0]):b[c.dataLayerName].push({event:"scrollTracking",attributes:{distance:a,label:c.label}})}
 function i(a){
 	if(/^\/[0-9]{4}\/[0-9]{2}\//.test(document.location.pathname)){
+		var labels = document.getElementsByClassName('label-name')[0].innerHTML
+		for (var i = 1; i < document.getElementsByClassName('label-name').length; i++) {
+    			labels = labels + '-' + document.getElementsByClassName('label-name')[i].innerHTML
+		};
 		ga('ec:addProduct', {
 	   	'id': document.location.pathname,
 	   	'name': document.location.pathname,
-	   	'category': 'Apparel',
+	   	'category': labels + '/' + document.location.pathname.match(/^\/([0-9]{4})\/[0-9]{2}\/.*/)[1] + '/' + document.location.pathname.match(/^\/[0-9]{4}\/([0-9]{2})\/.*/)[1],
 	   	'brand': 'Google',
 	   	'variant': 'black',
 	   	'price': '1',
