@@ -22,9 +22,7 @@ function i(a){
 		});
 		if(a=="25%"){ga('ec:setAction', 'add');}
 		if(a=="50%"){ga('ec:setAction','checkout', {'step': 1});}
-		if(a=="75%"){ga('ec:setAction','checkout', {'step': 2});}
-		if(a=="100%"){
-			ga('ec:setAction', 'purchase', {
+		if(a=="75%"){ga('ec:setAction', 'purchase', {
 				'id': document.location.pathname,
 				//'affiliation': 'affiliation',
 				'revenue': '1',
@@ -32,6 +30,20 @@ function i(a){
 				'shipping': '0',
 				//'coupon': 'coupon' 
 			});}
+		if(a=="100%"){
+			for (var i = 0; i < document.getElementById("PopularPosts1").getElementsByClassName("post-title").length; i++) {
+				ga('ec:addImpression', {
+				'id': document.getElementById("PopularPosts1").getElementsByClassName("post-title")[i].getElementsByTagName('a')[0].getAttribute('href'),
+				'name': document.getElementById("PopularPosts1").getElementsByClassName("post-title")[i].getElementsByTagName('a')[0].getAttribute('href'),
+				//'category': 'labels',
+				//'brand': 'brand',
+				//'variant': 'variant',
+				'list': 'Popular Posts',
+				'position': i
+				});
+			};
+			
+			     }
 		}
 	var d=b.GoogleAnalyticsObject;void 0===b[c.dataLayerName]||c.forceSyntax?"function"==typeof b[d]&&"function"==typeof b[d].getAll&&2!==c.forceSyntax?b[d]("send","event",c.category,a,c.label):void 0!==b._gaq&&1!==c.forceSyntax&&b._gaq.push(["_trackEvent",c.category,a,c.label,0,!0]):b[c.dataLayerName].push({event:"scrollTracking",attributes:{distance:a,label:c.label}})
 	}
